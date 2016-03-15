@@ -27,6 +27,7 @@ namespace WindowsFormsApplication2
             int nbEquip = perso.equipment.Count;
 
             form.iniPrgBar(nbEquip);
+            form.progressBar2.Value = 0;
 
             labRace.Text = perso.race;
             form.updateBar();
@@ -112,12 +113,26 @@ namespace WindowsFormsApplication2
                     case "Backpack":
                         string back = perso.equipment[i].id;
                         pictureBack.ImageLocation = recupImg(back);
-                        //form.progressBar2.Value = 0;
+                        break;
+                    case "HelmAquatic":
+                        string helmAq = perso.equipment[i].id;
+                        pictureHelmAqua.ImageLocation = recupImg(helmAq);
+                        break;
+                    case "Sickle":
+                        string sick = perso.equipment[i].id;
+                        pictureSick.ImageLocation = recupImg(sick);
+                        break;
+                    case "Axe":
+                        string axe = perso.equipment[i].id;
+                        pictureAxe.ImageLocation = recupImg(axe);
+                        break;
+                    case "Pick":
+                        string pick = perso.equipment[i].id;
+                        picturePick.ImageLocation = recupImg(pick);
                         break;
                 }
                 form.updateBar();
-            }
-            form.progressBar2.Value = 0;     
+            }              
         }
 
         private string recupImg(string equip)
